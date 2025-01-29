@@ -1,0 +1,9 @@
+*.log
+*.error
+*.gz
+*.bam
+*.bam.bai
+*.sam
+*.stats
+*.html
+*.json
