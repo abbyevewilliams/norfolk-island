@@ -15,7 +15,7 @@ ml SAMtools/1.16.1-GCC-11.3.0
 
 # Define paths
 export PATH=/data/biol-silvereye/ball6625/software/bwa-mem2-2.2.1_x64-linux:$PATH
-REF=/data/biol-silvereye/ref_genome/GCA_001281735.1_ASM128173v1_genomic.fna.gz
+REF=/data/biol-silvereye/ref_genome/Zlat_2_Tgut_pseudochromosomes.shortChromNames.fasta.gz
 RAW_READS_PATH=/data/biol-silvereye/ball6625/norfolk-island/filter/filtered-reads
 mapfile -t SAMPLES < samples.txt
 
@@ -24,8 +24,6 @@ if [ ! -f "$REF.bwt.2bit.64" ]; then
     echo "Indexing reference genome..."
     bwa-mem2 index $REF
 fi
-
-#/data/biol-silvereye/ball6625/software/bwa-mem2-2.2.1_x64-linux/bwa-mem2 index $REF
 
 # Proceed to alignment
 
@@ -37,14 +35,7 @@ do
     FORWARD=${RAW_READS_PATH}/${SAMPLE}_trimmed_R1.fastq.gz
     REVERSE=${RAW_READS_PATH}/${SAMPLE}_trimmed_R2.fastq.gz
 
-    # Run bwa-mem2 for PE reads
-    #/data/biol-silvereye/ball6625/software/bwa-mem2-2.2.1_x64-linux/bwa-mem2 mem \
-    #    -t 8 \
-    #    $REF \
-    #    $FORWARD \
-    #    $REVERSE \
-    #    > ${SAMPLE}.sam
-    
+    # Run bwa-mem2 for PE reads    
     bwa-mem2 mem -t 8 $REF $FORWARD $REVERSE > ${SAMPLE}.sam
 
     # check stats

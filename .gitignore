@@ -1,5 +1,6 @@
 *.log
 *.error
+*/logs
 *.gz
 *.bam
 *.bam.bai
@@ -7,3 +8,4 @@
 *.stats
 *.html
 *.json
+/outputs
