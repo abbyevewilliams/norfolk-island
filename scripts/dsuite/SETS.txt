@@ -1,0 +1,10 @@
+ind0	Outgroup
+ind1	Zten
+ind2	xxx
+ind3	xxx
+ind4	xxx
+ind5	Zlat
+ind6	Zlat
+ind7	Zten
+ind8	Outgroup
+ind9	Zten

@@ -1,6 +1,7 @@
 *.log
 *.error
-*/logs
+*.out
+logs/
 *.gz
 *.bam
 *.bam.bai
@@ -9,3 +10,5 @@
 *.html
 *.json
 /outputs
+*env
+pcangsd
